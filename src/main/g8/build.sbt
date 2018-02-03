@@ -6,8 +6,6 @@ version := "0.1"
 
 scalaVersion := "2.12.4"
 
-//resolvers += Resolver.sonatypeRepo("releases")
-//resolvers += Resolver.sonatypeRepo("snapshots")
 resolvers += "jitpack" at "https://jitpack.io"
 
 val jettyVersion = "9.3.6.v20151106"
@@ -15,7 +13,7 @@ val jettyVersion = "9.3.6.v20151106"
 enablePlugins(JavaAppPackaging)
 
 libraryDependencies ++= Seq(
-  "com.github.springernature" %% "samatra" % "v1.1",
+  "com.github.springernature.samatra" %% "samatra" % "v1.5.0",
   "org.eclipse.jetty" % "jetty-webapp" % jettyVersion,
   "org.eclipse.jetty" % "jetty-server" % jettyVersion,
   "org.eclipse.jetty" % "jetty-http" % jettyVersion,
