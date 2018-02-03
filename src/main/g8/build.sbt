@@ -8,7 +8,7 @@ scalaVersion := "2.12.4"
 
 resolvers += "jitpack" at "https://jitpack.io"
 
-val jettyVersion = "9.3.6.v20151106"
+val jettyVersion = "9.4.8.v20171121"
 
 enablePlugins(JavaAppPackaging)
 
