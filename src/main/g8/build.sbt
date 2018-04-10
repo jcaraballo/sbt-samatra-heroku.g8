@@ -23,5 +23,5 @@ libraryDependencies ++= Seq(
   "org.eclipse.jetty" % "jetty-servlets" % jettyVersion,
   "org.eclipse.jetty" % "jetty-util" % jettyVersion,
   "org.eclipse.jetty" % "jetty-jmx" % jettyVersion,
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.5" % "test"
 )
