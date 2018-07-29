@@ -64,3 +64,12 @@ Push changes to your origin as you would normally do with `git push`. Then redep
 with
     
     git push heroku master
+
+Test
+----
+
+You can test the template with
+
+    docker build -t sbt-samatra-heroku.g8 . && docker run sbt-samatra-heroku.g8
+
+(Requires docker)
