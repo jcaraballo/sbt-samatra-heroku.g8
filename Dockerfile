@@ -7,26 +7,12 @@ WORKDIR /retrieving
 COPY project/build.properties project/build.properties
 RUN sbt about
 
-# Installing g8
-WORKDIR /root
-RUN pwd
-# Installing conscript
-RUN echo 'export CONSCRIPT_HOME="$HOME/.conscript"' >> .bashrc \
-    && echo 'export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"' >> .bashrc \
-    && echo 'export PATH=$CONSCRIPT_HOME/bin:$PATH' >> .bashrc
-# Installing conscript: Executing conscript's setup.sh to install to ~/.conscript/bin/cs
-RUN wget https://raw.githubusercontent.com/foundweekends/conscript/master/setup.sh --quiet -O - | sh
-# Instaling g8 with Conscript
-RUN /bin/bash -c "cd /root && .conscript/bin/cs foundweekends/giter8"
-
-COPY . /app/template
+# Use template to build the potato project
+COPY . /app/template.g8
 WORKDIR /app
+RUN sbt new file://template.g8 --name=potato
 
-RUN /bin/bash -c "source ~/.bashrc && g8 file://template --name=potato"
-
-
+# Run the tests in the newly created potato project
 WORKDIR /app/potato
-
 RUN sbt test
-
 
