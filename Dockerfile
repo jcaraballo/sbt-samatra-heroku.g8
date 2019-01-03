@@ -1,5 +1,5 @@
 FROM openjdk:8u171-jdk
-RUN wget https://piccolo.link/sbt-1.2.1.tgz --quiet -O - | tar xz -C /opt
+RUN wget https://piccolo.link/sbt-1.2.8.tgz --quiet -O - | tar xz -C /opt
 ENV PATH="/opt/sbt/bin:${PATH}"
 
 # Retreive Scala and SBT dependencies
